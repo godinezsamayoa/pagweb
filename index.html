@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mecanismos de Transmisión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section class="row" aria-labelledby="aspnetTitle">
+            <h1 id="title">Mecanismos de Transmisión</h1>
+            <p class="lead">
+                Métodos y tecnologías diseñadas para facilitar la migración gradual y
+                la coexistencia entre los dos protocolos de Internet, IPv4 (Internet Protocol versión 4)
+                e IPv6 (Internet Protocol versión 6). Debido a la escasez de direcciones IPv4 y la necesidad
+                de adoptar IPv6 para soportar el crecimiento futuro de Internet, es esencial tener mecanismos
+                que permitan una transición suave de IPv4 a IPv6.
+            </p>
+        </section>
+
+        <div class="row">
+            <section class="col-md-8" aria-labelledby="gettingStartedTitle">
+                <h2 id="gettingStartedTitle">Transición de IPv4 a IPv6</h2>
+                <p>El primer punto a tener en cuenta es que la dificultad de la transición de IPv4 a IPv6 radica en el hecho de que ambos protocolos son incompatibles entre sí.</p>
+                <p>La solución planeada para la transición de IPv4 a IPv6 fue el uso de la doble pila.</p>
+                <p>El protocolo IPv4 se seguiría usando normalmente y, paulatinamente, en cada componente de Internet se iría desplegando IPv6. Ciertamente, en algún momento antes del agotamiento de IPv4, el protocolo IPv6 estaría presente en todos los elementos de la red. Así, IPv4 se volvería innecesario y poco después este protocolo sería abandonado.</p>
+            </section>
+            <section class="col-md-4" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/doblep.jpg" alt="Doble pila" width="200" height="150">
+                </div>
+            </section>
+        </div>
+
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>Técnicas de Transición Tradicionales</h2>
+                <h3>Túneles estáticos 6in4</h3>
+                <p>Es posible encapsular paquetes IPv6 directamente dentro de paquetes IPv4, en forma de payload. En este caso, en el campo de protocolo del encabezado IPv4 se especifica el valor 41. Popularmente también se le suele llamar “Protocolo 41”.</p>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/6in4.jpg" alt="6 en 4" width="350" height="300">
+                </div>
+            </section>
+        </div>
+
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>Túneles estáticos GRE</h2>
+                <p>GRE (Generic Routing Encapsulation) es un tipo de encapsulamiento genérico definido en la RFC 2784, luego actualizada por la RFC 2890. GRE tiene un encabezado propio y puede transportar diferentes tipos de protocolos. También puede ser transportado en varios tipos de protocolos.</p>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/gre.jpg" alt="GRE" width="350" height="300">
+                </div>
+            </section>
+        </div>
+
+         <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>Tunnel Brokers</h2>
+                <p>Los Tunnel Brokers pueden ser considerados como proveedores de acceso IPv6 virtuales.
+                Este mecanismo está documentado en la RFC 3053. Fue creado a comienzos de la década del
+                2000, época en la que la oferta de conectividad IPv6 nativa era todavía muy pequeña, y su
+                objetivo era ofrecer a todos los interesados una alternativa de conexión estable y persistente,
+                por medio de túneles.</p>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/broker.jpg" alt="broker" width="350" height="300">
+                </div>
+            </section>
+        </div>
+
+         <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>6PE y 6VPE</h2>
+                <p>PE es una técnica que permite a los proveedores de internet transportar
+                tráfico IPv6 a través de sus redes de alta velocidad basadas en MPLS, lo que facilita
+                la migración hacia IPv6 sin tener que cambiar completamente la infraestructura de la red.</p>
+                <p>
+                VPE es una extensión de 6PE que permite a los proveedores de servicios ofrecer servicios de
+                red privada virtual (VPN) utilizando IPv6, lo que garantiza la privacidad y seguridad de la
+                comunicación de datos entre diferentes ubicaciones de una organización en una red basada en IPv6.
+            </p>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/4.jpg" alt="6PE y 6VPE" width="350" height="300">
+                </div>
+            </section>
+        </div>
+
+         <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>Túneles automáticos 6to4</h2>
+                <p>Los túneles automáticos 6to4 son una forma de permitir que las redes IPv6 se
+                comuniquen a través de redes IPv4. Funcionan envolviendo el tráfico IPv6 dentro
+                de paquetes IPv4 para que pueda viajar a través de la red IPv4 existente. Es como
+                si el tráfico IPv6 se "escondiera" dentro del tráfico IPv4 para llegar a su destino
+                en una red IPv6. Esto ayuda a facilitar la transición entre IPv4 e IPv6 mientras
+                se actualizan las redes.</p>
+                
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/6to4.jpg" alt="6to4" width="350" height="300">
+                </div>
+            </section>
+        </div>
+
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>TÚNELES 6RD</h2>
+                <p> El proveedor de servicios de Internet configura su red para que encapsule el tráfico
+                IPv6 dentro de paquetes IPv4 y lo envíe a través de la infraestructura IPv4 existente.
+                Esto permite que los clientes de ese proveedor de servicios de Internet utilicen
+                direcciones IPv6 para comunicarse en Internet, incluso si la red del proveedor de servicios
+                de Internet todavía está basada en IPv4.</p>
+                
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/6rd.jpg" alt="6rd" width="350" height="300">
+                </div>
+            </section>
+        </div>
+
+         <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>Teredo</h2>
+                <p> Teredo es un mecanismo parecido a 6to4, pero con menos utilidad práctica hoy en día.
+                Se usa para conectar un solo dispositivo a la red IPv6, no toda una red. Usa un prefijo
+                específico para los clientes. Para hacer que los túneles funcionen en redes con NAT, utiliza
+                UDP. Aparte de los relays, también hay servidores que ayudan a detectar el tipo de NAT y
+                a iniciar la comunicación.</p>
+                 <p>
+                Para redes corporativas, Teredo presenta problemas similares a los de 6to4.
+                Por eso, es recomendable bloquear activamente su uso. Esto se puede lograr desactivando
+                Teredo en los sistemas operativos o bloqueando el tráfico saliente al puerto UDP 3544 en la red.
+                </p>
+                
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>NUEVAS TECNICAS DE TRANSICIÓN</h2>
+                <h3> NAT444</h3>
+                <p>
+                Esta técnica también se conoce como CGNAT (Carrier Grade NAT).
+                Cualquier técnica que utilice traducción de direcciones en la red del
+                proveedor de acceso puede ser considerada una CGNAT. La traducción de
+                direcciones de red (NAT) que implica dos niveles de traducción de direcciones
+                IPv4. En este escenario, tanto el cliente como el proveedor de servicios
+                de Internet (ISP) implementan NAT.</p>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/NAT.jpg" alt="NAT" width="350" height="300">
+                </div>
+            </section>
+        </div>
+
+         <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>NAT64 y DNS64</h2>
+                <p>
+                El mecanismo NAT64 se define en la RFC 6146. Es una técnica stateful para traducción de paquetes y puertos IPv6 a IPv4. Permite, simultáneamente, el uso compartido de direcciones IPv4. El DNS64 se define en la RFC 6147 y es una técnica auxiliar de mapeo para nombres de dominio, que se utiliza en conjunto con NAT64.
+            </p>
+            <p>
+                Con NAT64 y DNS64 es posible que los usuarios reciban únicamente direcciones IPv6 de parte del proveedor y que incluso así puedan acceder a dispositivos IPv4 en Internet.
+            </p>
+                
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/dns.jpg" alt="NAT64 y DNS64" width="350" height="300">
+                </div>
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>464XLAT</h2>
+                <p>
+                La técnica 464XLAT está documentada en la RFC 6877 y, a los fines prácticos, se puede considerar como un complemento del mecanismo NAT64,  esta técnica consiste en una combinación del uso de traducción stateful entre IPv6 e IPv4 en la red del proveedor.
+                
+            <p>
+                Permiten la comunicación entre dispositivos móviles que ejecutan IPv6 y servidores IPv4 en una red y utiliza una combinación de mecanismos de transición, incluyendo NAT64 y DNS64
+            </p>
+                
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/lat.jpg" alt="464XLAT" width="350" height="300">
+                </div>
+            </section>
+        </div>
+         <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>DS-Lite</h2>
+                <p>
+                Dual Stack Lite: Es una técnica para aborda el agotamiento de direcciones IPv4 mediante la encapsulación de tráfico IPv4 en IPv6.
+            </p>
+            <p>
+                Utiliza un túnel para este propósito y permite a los usuarios conectarse vía IPv6 nativamente mientras reciben una dirección IPv4 privada..
+            </p>
+                
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/lite.jpg" alt="DS-Lite" width="350" height="300">
+                </div>
+            </section>
+        </div>
+         <div class="row">
+            <section class="col-md-12" aria-labelledby="gettingStartedTitle">
+                <h2>MAP</h2>
+                  <p>
+                MAP (Mapping of Addressing and Port) es una técnica de transición que permite la conectividad nativa IPv6 y el uso de direcciones IPv4 privadas.
+            </p>
+            <p>
+                Tiene dos versiones: MAP-T (Traducción) y MAP-E (Encapsulamiento), que ofrecen diferentes enfoques para la traducción de direcciones.
+            </p>
+            <p>
+                No es un CGNAT y utiliza la técnica A+P (Address plus Port) para compartir direcciones IPv4 de manera stateless.
+            </p>
+                
+            </section>
+        </div>
+        <div class="row">
+            <section class="col-md-12" aria-labelledby="hostingTitle">
+                <div style="text-align: center;">
+                    <img src="Img/map.jpg" alt="MAP" width="350" height="300">
+                </div>
+            </section>
+        </div>
+
+
+
+    </main>
+    <script src="script.js"></script> <!-- Archivo JS opcional -->
+</body>
+</html>
